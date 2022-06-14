@@ -1,0 +1,39 @@
+POST http://localhost:8081/todos HTTP/1.1
+content-type: application/json
+
+{
+    "expired_at": "2022-06-14T15:10:52+00:00",
+    "title": "test title",
+    "description": "test description"
+}
+
+###
+GET  http://localhost:8081/todos HTTP/1.1
+
+###
+GET  http://localhost:8081/todos?filter=today HTTP/1.1
+
+###
+GET  http://localhost:8081/todos?filter=nextday HTTP/1.1
+
+###
+GET  http://localhost:8081/todos?filter=currentweek HTTP/1.1
+
+###
+GET  http://localhost:8081/todos/1 HTTP/1.1
+
+###
+PUT http://localhost:8081/todos/1 HTTP/1.1
+content-type: application/json
+
+{
+    "expired_at": "2023-05-14T15:10:52+00:00",
+    "title": "updated title",
+    "description": "updated description",
+    "completion": 224
+}
+###
+PATCH  http://localhost:8081/todos/1/done HTTP/1.1
+
+###
+DELETE http://localhost:8081/todos/1 HTTP/1.1
